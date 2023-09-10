@@ -1,6 +1,6 @@
 # Snake Machine Learning 
 
-![!\[!\\[Alt text\\](image.png)\](assents/image.png)](assents/image.png)
+![snake](assents/image.png)
 
 ## Discription 
 
