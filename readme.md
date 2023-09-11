@@ -1,5 +1,4 @@
 # **Snake Machine Learning**
-
 ---
 
 ![Alt text](assents/snake.jpg)
@@ -14,7 +13,7 @@ The project is written in python and uses the arcade library for the game.
 
 ##  how to generate dataset
 
-Snake moves automatically with rules (if, else, for, while, etc) and write information in a dataset.csv file with pandas
+Snake moves automatically with rules (if, else, for, while, etc) and write information in a `dataset.csv` file with pandas
 
 
 
@@ -25,7 +24,7 @@ Snake moves automatically with rules (if, else, for, while, etc) and write infor
 
 
  ## How to run
- 1. Generate dataset
+ 1. **Generate dataset**
 
  you can type below command in terminal to run this file:    
 
@@ -43,7 +42,7 @@ Snake moves automatically with rules (if, else, for, while, etc) and write infor
 ![Alt text](assents/dataset.PNG)
 
 
- 2. Train naural network
+ 2. **Train naural network**
 
   you can type below command in terminal to run this file:    
 
@@ -87,32 +86,32 @@ bl=0 means there is no part of the snake's body on the left side of the snake's 
 The direction is the same as label, target or y, which is one of the values u, r, d, l
 
 
-### **The specifications of my model are:**
+### The specifications of my model are:
 
-   - **Model has three hidden layer and one input and one output layer**
+   - Model has three hidden layer and one input and one output layer
 
 
-Neuron number of input layer: 12
+Neuron number of input layer ---> 12
 
-Neuron number of first hidden layer: 30
+Neuron number of first hidden layer---> 30
 
-Neuron number of second hidden layer: 16
+Neuron number of second hidden layer---> 16
 
-Neuron number of output layer: 4
+Neuron number of output layer---> 4
 
-activation function of fisrt layer: sigmoid
+activation function of fisrt layer---> sigmoid
 
-activation function of  hidden layers: relu
+activation function of  hidden layers---> relu
 
-activation function of output layer: softmax
+activation function of output layer---> softmax
 
-optimizer: Adam
+optimizer---> Adam
 
-learning rate: defult
+learning rate---> defult
 
-loss function: sparse_categorical_crossentropy
+loss function---> sparse_categorical_crossentropy
 
-epochs number: 100
+epochs number---> 100
 
 
 
@@ -128,21 +127,22 @@ epochs number: 100
 
 ![!\[loss_acc\](output/loss_acc.png)](assents/loss_acc.png)
 
- 3. Play game
+ 3. **Play game**
 
    you can type below command in terminal to run this file:    
 
 ```python main_ml.py```
 
- I will give the file that I saved with the name snake_game_model.h5 to the game that was implemented with simple artificial intelligence to use it and run it. The picture below is the output of the snake game with a neural network.
+ I will give the file that I saved with the name `snake_game_model.h5` to the game that was implemented with simple artificial intelligence to use it and run it. The picture below is the output of the snake game with a neural network.
   
 
 ### play snake with keyborad keys:
 
 ```python main_manual.py```
 
+---
 
-The output of the execution `main_ml.py`
+**The output of the execution `main_ml.py`**
 
 ![Alt text](assents/game.PNG)
 
