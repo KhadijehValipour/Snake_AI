@@ -1,4 +1,4 @@
-# Snake Machine Learning 
+# **Snake Machine Learning**
 
 ---
 
@@ -12,7 +12,7 @@ The neural network is trained using a genetic algorithm.
 The project is written in python and uses the arcade library for the game.
 
 
-####  how to generate dataset
+##  how to generate dataset
 
 Snake moves automatically with rules (if, else, for, while, etc) and write information in a dataset.csv file with pandas
 
@@ -52,7 +52,7 @@ Snake moves automatically with rules (if, else, for, while, etc) and write infor
  We read the dataset with pandas and convert it to numpy array and create a neural network using tensorflow. The input layer is the number of columns of the dataset. The hidden layers are completely optional and also the activation function. Of course, the last layer, because our problem is classification, due to the number of outputs, which is four keys, means the answer to the directions of the snake: up and down, left and right, so it is better for the last layer function to be activated by softmax, it is not a rule based on experience.
  With scikit learn, we divide all the data into two parts, train and test, in order to test it after learning.
 
- We get loss, accuracy with Tensorflow. I save all the things I said in the train section in the file called snake_game_model.h5.
+ We get loss, accuracy with Tensorflow. I save all the things I said in the train section in the file called `snake_game_model.h5`.
 
 
 
@@ -87,7 +87,7 @@ bl=0 means there is no part of the snake's body on the left side of the snake's 
 The direction is the same as label, target or y, which is one of the values u, r, d, l
 
 
-#### The specifications of my model are:
+### **The specifications of my model are:**
 
    - **Model has three hidden layer and one input and one output layer**
 
@@ -141,6 +141,8 @@ epochs number: 100
 
 ```python main_manual.py```
 
+
+The output of the execution `main_ml.py`
 
 ![Alt text](assents/game.PNG)
 
