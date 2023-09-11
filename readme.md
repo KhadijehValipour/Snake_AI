@@ -11,13 +11,6 @@ The neural network is trained using a genetic algorithm.
 The project is written in python and uses the arcade library for the game.
 
 
-##  how to generate dataset
-
-Snake moves automatically with rules (if, else, for, while, etc) and write information in a `dataset.csv` file with pandas
-
-
-
-
  ## How to install 
 
 ``` pip install -r requirments.txt ```
@@ -25,6 +18,10 @@ Snake moves automatically with rules (if, else, for, while, etc) and write infor
 
  ## How to run
  1. **Generate dataset**
+
+ **how to generate dataset**
+
+Snake moves automatically with rules (if, else, for, while, etc) and write information in a `dataset.csv` file with pandas
 
  you can type below command in terminal to run this file:    
 
@@ -57,11 +54,11 @@ Snake moves automatically with rules (if, else, for, while, etc) and write infor
 
 ###  X :
 
- -   u: up direction
+  -   u: up direction
 
   -  r: right direction
 
-   - d: down direction
+  - d: down direction
 
   -  l: left direction
 
@@ -69,7 +66,7 @@ Snake moves automatically with rules (if, else, for, while, etc) and write infor
 
   -  a: apple
 
- -   b: body
+  -   b: body
 
 For example
 
@@ -86,32 +83,7 @@ bl=0 means there is no part of the snake's body on the left side of the snake's 
 The direction is the same as label, target or y, which is one of the values u, r, d, l
 
 
-### The specifications of my model are:
 
-   - Model has three hidden layer and one input and one output layer
-
-
-Neuron number of input layer ---> 12
-
-Neuron number of first hidden layer---> 30
-
-Neuron number of second hidden layer---> 16
-
-Neuron number of output layer---> 4
-
-activation function of fisrt layer---> sigmoid
-
-activation function of  hidden layers---> relu
-
-activation function of output layer---> softmax
-
-optimizer---> Adam
-
-learning rate---> defult
-
-loss function---> sparse_categorical_crossentropy
-
-epochs number---> 100
 
 
 
