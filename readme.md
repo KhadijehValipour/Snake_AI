@@ -1,7 +1,8 @@
 # Snake Machine Learning 
 
+---
 
-![!\[Alt text\](image.png)](assents/image.png)
+![Alt text](assents/snake.jpg)
 
 
 ## Discription 
