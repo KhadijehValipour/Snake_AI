@@ -3,7 +3,7 @@ import random
 
 class Apple(arcade.Sprite) :
     def __init__(self,game):
-        super().__init__("apple.png")
+        super().__init__("assents/apple.png")
         self.width = 32
         self.height = 32
         self.center_x = (random.randint(16 ,game.width - 16)) // 16 * 16
