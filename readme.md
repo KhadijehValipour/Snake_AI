@@ -13,7 +13,9 @@ The project is written in python and uses the arcade library for the game.
 
  ## How to install 
 
-``` pip install -r requirments.txt ```
+``` 
+pip install -r requirments.txt
+```
 
 
  ## How to run
@@ -21,14 +23,18 @@ The project is written in python and uses the arcade library for the game.
 
  **how to generate dataset**
 
-Snake moves automatically with rules (if, else, for, while, etc) and write information in a `dataset.csv` file with pandas
+Snake moves automatically with rules (if, else, for, while, etc) and write information in a ```dataset.csv``` file with pandas
 
  you can type below command in terminal to run this file:    
 
-```python main_ai.py```
+```
+python main_ai.py
+```
 
 
-```python generate_dataset.py```
+```
+python generate_dataset.py
+```
 
 
  We implemented the game with simple artificial intelligence that we made with a few if _else conditions so that the snake moves towards the apple without the intervention of the user, and after a few moves and eating the apple, all the movements of the snake, which we named as X, were created using pandas. We save the shape of the data frame.
@@ -43,12 +49,14 @@ Snake moves automatically with rules (if, else, for, while, etc) and write infor
 
   you can type below command in terminal to run this file:    
 
-```python train.py```
+```
+python train.py
+```
 
  We read the dataset with pandas and convert it to numpy array and create a neural network using tensorflow. The input layer is the number of columns of the dataset. The hidden layers are completely optional and also the activation function. Of course, the last layer, because our problem is classification, due to the number of outputs, which is four keys, means the answer to the directions of the snake: up and down, left and right, so it is better for the last layer function to be activated by softmax, it is not a rule based on experience.
  With scikit learn, we divide all the data into two parts, train and test, in order to test it after learning.
 
- We get loss, accuracy with Tensorflow. I save all the things I said in the train section in the file called `snake_game_model.h5`.
+ We get loss, accuracy with Tensorflow. I save all the things I said in the train section in the file called ```snake_game_model.h5```.
 
 
 
@@ -103,18 +111,22 @@ The direction is the same as label, target or y, which is one of the values u, r
 
    you can type below command in terminal to run this file:    
 
-```python main_ml.py```
+```
+python main_ml.py
+```
 
- I will give the file that I saved with the name `snake_game_model.h5` to the game that was implemented with simple artificial intelligence to use it and run it. The picture below is the output of the snake game with a neural network.
+ I will give the file that I saved with the name ```snake_game_model.h5``` to the game that was implemented with simple artificial intelligence to use it and run it. The picture below is the output of the snake game with a neural network.
   
 
 ### play snake with keyborad keys:
 
-```python main_manual.py```
+```
+python main_manual.py
+```
 
 ---
 
-**The output of the execution `main_ml.py`**
+**The output of the execution ```main_ml.py```**
 
 ![Alt text](assents/game.PNG)
 
