@@ -9,7 +9,7 @@ class Game(arcade.Window) :
         arcade.set_background_color(arcade.color.KHAKI)  
         self.snake = Snake(self)
         self.food=Apple(self)
-        self.model = tf.keras.models.load_model('E:/PYLEARN/app/MachineLearning_project/weights/snake_game_model.h5')
+        self.model = tf.keras.models.load_model('weights/snake_game_model.h5')
 
 
     def on_draw(self):
