@@ -1,7 +1,7 @@
 import tensorflow as tf
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import OneHotEncoder
+
 
 
 # load data
@@ -11,12 +11,6 @@ data = data.iloc[1:]
 
 X = data.iloc[:,:-1].values  # همه ردیف ها تا ستون اخر
 Y = data.iloc[: , -1].values # همه ردیف ها فقط ستون اخرشون
-
-enc = OneHotEncoder()
-enc.fit(Y)
-onehotlabels = enc.transform(Y).toarray()
-labels = pd.DataFrame(onehotlabels)
-
 
 
 X_train , X_test ,Y_train ,Y_test = train_test_split(X,Y,test_size=0.2,shuffle=True)
@@ -33,10 +27,11 @@ model.compile(optimizer='adam' ,
               metrics=['accuracy']
 )
 
-output = model.fit(X_train,Y_train,epochs=100)
+output = model.fit(X_train,Y_train,epochs=108)
 
 model.evaluate(X_test ,Y_test)
 
 loss , accuracy = model.evaluate(X_test,Y_test)
 
-model.save('snake_game_model.h5')
+model.save('E:/PYLEARN/app/MachineLearning_project/weights/snake_game_model.h5')
+
