@@ -5,7 +5,7 @@ from sklearn.preprocessing import OneHotEncoder
 
 
 # load data
-data = pd.read_csv('dataset.csv' , header=None) 
+data = pd.read_csv('E:/PYLEARN/app/MachineLearning_project/dataset/dataset.csv' , header=None) 
 data = data.dropna()
 data = data.iloc[1:]
 

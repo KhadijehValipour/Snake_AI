@@ -95,14 +95,14 @@ The direction is the same as label, target or y, which is one of the values u, r
 
 
 
-| loss train     | accuracy  train    | 
-| :---           | :---               |
-|0.0089          | 0.9971             |
+| loss train   | accuracy  train    | 
+| :---         | :---               |
+|0.0069        | 0.9983             |
 
 
-|  loss test     | accuracy test      |
-| :---           | :---               |
-|  0.0014        | 1.0000             |
+|  loss test   | accuracy test      |
+| :---         | :---               |
+|  0.0063      | 0.9974             |
 
 
 ![!\[loss_acc\](output/loss_acc.png)](assents/loss_acc.png)
