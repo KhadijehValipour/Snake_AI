@@ -11,19 +11,7 @@ class Game(arcade.Window) :
         self.snake = Snake(self)
         self.food=Apple(self)
         self.model = tf.keras.models.load_model('weights/snake_game_model.h5')
-        self.wu = 1
-        self.wr = 1
-        self.wd = 1
-        self.wl = 1
-        self.au = 1
-        self.ar = 1
-        self.ad = 1
-        self.al = 1
-        self.bu = 1
-        self.br = 1
-        self.bd = 1
-        self.bl = 1
-
+   
 
     def on_draw(self):
         arcade.start_render()
