@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 
 # load data
 data = pd.read_csv('dataset/dataset.csv' , header=None) 
-data = data.fillna(0)
+data = data.dropna()
 data = data.iloc[1:]
 
 X = data.iloc[:,:-1].values  # همه ردیف ها تا ستون اخر

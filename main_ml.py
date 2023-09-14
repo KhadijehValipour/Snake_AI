@@ -11,6 +11,18 @@ class Game(arcade.Window) :
         self.snake = Snake(self)
         self.food=Apple(self)
         self.model = tf.keras.models.load_model('weights/snake_game_model.h5')
+        self.wu = 1
+        self.wr = 1
+        self.wd = 1
+        self.wl = 1
+        self.au = 1
+        self.ar = 1
+        self.ad = 1
+        self.al = 1
+        self.bu = 1
+        self.br = 1
+        self.bd = 1
+        self.bl = 1
 
 
     def on_draw(self):
@@ -64,10 +76,12 @@ class Game(arcade.Window) :
                  data['bl'] = 1
                  data['br'] = 0
 
-        data = np.array([[self.snake.center_x , self.snake.center_y , self.snake.change_x , self.snake.change_y]])
+        data = np.array([[self.wu,self.wr,self.wd,self.wl,
+                          self.au,self.ar,self.ad,self.al,
+                          self.bu,self.br,self.bd,self.bl ]])
         print(data)
 
-        output = self.model.predict(data)
+        output = self.model.predict([data])
         direction = output.argmax()
         print("direction" , direction)
         if direction == 0 :
