@@ -36,10 +36,6 @@ class Snake(arcade.Sprite) :
         self.center_x += self.change_x * self.speed
         self.center_y += self.change_y * self.speed
 
-    
-       
-
-
     def eat(self,food): 
         del food
         self.score += 1

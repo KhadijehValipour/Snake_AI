@@ -64,9 +64,7 @@ class Game(arcade.Window) :
                  data['bl'] = 1
                  data['br'] = 0
 
-        data = np.array([[self.wu,self.wr,self.wd,self.wl,
-                          self.au,self.ar,self.ad,self.al,
-                          self.bu,self.br,self.bd,self.bl ]])
+        data = np.array(data)
         print(data)
 
         output = self.model.predict([data])
