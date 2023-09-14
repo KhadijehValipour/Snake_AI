@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 
 # load data
 data = pd.read_csv('dataset/dataset.csv' , header=None) 
-data = data.dropna()
+data = data.fillna(0)
 data = data.iloc[1:]
 
 X = data.iloc[:,:-1].values  # همه ردیف ها تا ستون اخر
@@ -14,6 +14,9 @@ Y = data.iloc[: , -1].values # همه ردیف ها فقط ستون اخرشون
 
 
 X_train , X_test ,Y_train ,Y_test = train_test_split(X,Y,test_size=0.2,shuffle=True)
+Y_train = Y_train.reshape(-1,1)
+Y_test  = Y_test.reshape(-1,1)
+print(X_train.shape , X_test.shape , Y_train.shape , Y_test.shape)
 
 model = tf.keras.models.Sequential([
     tf.keras.layers.Dense(12 , activation='sigmoid') , 
