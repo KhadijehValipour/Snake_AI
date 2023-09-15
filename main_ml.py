@@ -1,6 +1,7 @@
 import tensorflow as tf
 import arcade
 import numpy as np
+import pandas as pd
 from snake import Snake
 from apple import Apple
 
@@ -17,11 +18,55 @@ class Game(arcade.Window) :
         arcade.start_render()
         self.snake.draw()
         self.food.draw()
-        arcade.finish_render()
+        #arcade.finish_render()
 
-    def on_update(self, delta_time: float):
+    def on_update(self, delta_time):
         self.snake.move()
-        data = {}
+        data =  {"wu":None , 
+                "wr":None ,
+                "wd":None ,
+                "wl":None ,
+                "au":None ,
+                "ar":None ,
+                "ad":None ,
+                "al":None ,
+                "bu":None ,
+                "br":None ,
+                "bd":None ,
+                "bl":None }
+        # Data collection by calculating the distance from the apple to the head of the snake
+        if self.snake.center_x == self.food.center_x and self.snake.center_y < self.food.center_y :
+            data["au"] = 1
+            data["ad"] = 0
+            data["al"] = 0
+            data["ar"] = 0 
+
+        elif self.snake.center_x == self.food.center_x and self.snake.center_y > self.food.center_y :
+            data["au"] = 0
+            data["ad"] = 1
+            data["al"] = 0
+            data["ar"] = 0
+
+        elif self.snake.center_x > self.food.center_x and self.snake.center_y == self.food.center_y :
+            data["au"] = 0
+            data["ad"] = 0
+            data["al"] = 1
+            data["ar"] = 0
+
+        elif self.snake.center_x < self.food.center_x and self.snake.center_y == self.food.center_y :
+            data["au"] = 0
+            data["ad"] = 0
+            data["al"] = 0
+            data["ar"] = 1
+        
+        # Data collection by calculating the distance from the wall to the head of the snake
+        data["wu"] = game.height - self.snake.center_y
+        data["wd"] = self.snake.center_y
+        data["wl"] = self.snake.center_x
+        data["wr"] = game.width - self.snake.center_x
+
+        
+        # Data collection by calculating the distance from the snake's head to its body
         for part in self.snake.body :
              if self.snake.center_x == part['x'] and self.snake.center_y < part['y'] :
                  data['bu'] = 1
@@ -64,10 +109,15 @@ class Game(arcade.Window) :
                  data['bl'] = 1
                  data['br'] = 0
 
-        data = np.array(data)
-        print(data)
 
-        output = self.model.predict([data])
+
+        data = pd.DataFrame(data,index=[1])
+        data.fillna(0,inplace=True)
+        data = data.values
+
+        
+
+        output = self.model.predict(data)
         direction = output.argmax()
         print("direction" , direction)
         if direction == 0 :

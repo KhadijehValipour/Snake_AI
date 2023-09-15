@@ -19,7 +19,7 @@ class Game(arcade.Window) :
         arcade.start_render()
         self.snake.draw()
         self.food.draw()
-        arcade.finish_render()
+        #arcade.finish_render()
 
     def on_update(self, delta_time: float):
         self.snake.move()
