@@ -22,7 +22,7 @@ class Game(arcade.Window) :
 
     def on_update(self, delta_time):
         self.snake.move()
-        data =  {"wu":None , 
+        data = {"wu":None , 
                 "wr":None ,
                 "wd":None ,
                 "wl":None ,
@@ -33,7 +33,33 @@ class Game(arcade.Window) :
                 "bu":None ,
                 "br":None ,
                 "bd":None ,
-                "bl":None }
+                "bl":None ,
+                "dx" : None , 
+                "dy" : None }
+        
+        dx = self.snake.center_x - self.food.center_x
+        dy = self.snake.center_y - self.food.center_y
+
+        if self.snake.center_y > self.food.center_y :
+            self.snake.change_x = 0
+            self.snake.change_y = -1
+            data['direction'] = 2
+
+        elif self.snake.center_y < self.food.center_y :
+            self.snake.change_x = 0
+            self.snake.change_y = 1
+            data['direction'] = 0
+
+        elif self.snake.center_x > self.food.center_x :
+            self.snake.change_x = -1
+            self.snake.change_y = 0
+            data['direction'] = 3
+
+        elif self.snake.center_x < self.food.center_x :
+            self.snake.change_x = 1
+            self.snake.change_y = 0
+            data['direction'] = 1
+
         # Data collection by calculating the distance from the apple to the head of the snake
         if self.snake.center_x == self.food.center_x and self.snake.center_y < self.food.center_y :
             data["au"] = 1
@@ -64,6 +90,62 @@ class Game(arcade.Window) :
         data["wd"] = self.snake.center_y
         data["wl"] = self.snake.center_x
         data["wr"] = game.width - self.snake.center_x
+        data['dx'] = dx
+        data['dy'] = dy
+
+        if dx > 0 :
+            if dy > 0 :
+                self.snake.change_x = -1
+                self.snake.change_y = -1
+                data['direction'] = 3
+                if self.snake.change_x == 0 :
+                    data['direction'] =2
+            
+            elif dy < 0 :
+                self.snake.change_x = -1
+                self.snake.change_y = 1
+                data['direction'] = 3
+                if self.snake.change_x == 0 :
+                    data['direction'] = 0
+
+            else :
+                self.snake.change_x = -1 
+                self.snake.change_y = 0 
+                data['direction'] = 3
+        
+        if dx < 0 :
+            if dy > 0 :
+                self.snake.change_x=1
+                self.snake.change_y=-1
+                data['direction'] =1
+                if self.snake.change_x == 0 :
+                    data['direction']=2
+            elif dy < 0 :
+                self.snake.change_x = 1
+                self.snake.change_y = 1
+                data['direction'] = 1
+                if self.snake.change_x == 0 :
+                    data['direction'] = 0
+            else :
+                self.snake.change_x = 1
+                self.snake.change_y = 0
+                data['direction'] = 1
+
+            if dx == 0 :
+                if dy > 0 :
+                    self.snake.change_x = 0
+                    self.snake.change_y = -1
+                    data['direction'] = 2
+                elif dy < 0 :
+                    self.snake.change_x = 0
+                    self.snake.change_y = 1
+                    data['direction'] = 0 
+                else :
+                    self.snake.change_x = 0
+                    self.snake.change_y = 0
+
+
+    
 
         
         # Data collection by calculating the distance from the snake's head to its body
@@ -110,6 +192,7 @@ class Game(arcade.Window) :
                  data['br'] = 0
 
 
+    
 
         data = pd.DataFrame(data,index=[1])
         data.fillna(0,inplace=True)

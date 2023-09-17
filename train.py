@@ -19,7 +19,7 @@ Y_test  = Y_test.reshape(-1,1)
 print(X_train.shape , X_test.shape , Y_train.shape , Y_test.shape)
 
 model = tf.keras.models.Sequential([
-    tf.keras.layers.Dense(12 , activation='sigmoid') , 
+    tf.keras.layers.Dense(14 , activation='sigmoid') , 
     tf.keras.layers.Dense(30,activation='relu') , 
     tf.keras.layers.Dense(16,activation='relu') , 
     tf.keras.layers.Dense(4 , activation='softmax')
