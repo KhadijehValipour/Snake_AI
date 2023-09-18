@@ -1,6 +1,6 @@
-arcade
+arcade 
 tensorflow
+pandas 
 numpy
-pandas
-scikit_learn
+scikit-learn
 matplotlib

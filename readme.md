@@ -14,7 +14,7 @@ The project is written in python and uses the arcade library for the game.
  ## How to install 
 
 ``` 
-pip install -r requirments.txt
+pip install -r requirements.txt
 ```
 
 
