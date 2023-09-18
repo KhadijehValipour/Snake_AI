@@ -40,25 +40,6 @@ class Game(arcade.Window) :
         dx = self.snake.center_x - self.food.center_x
         dy = self.snake.center_y - self.food.center_y
 
-        if self.snake.center_y > self.food.center_y :
-            self.snake.change_x = 0
-            self.snake.change_y = -1
-            data['direction'] = 2
-
-        elif self.snake.center_y < self.food.center_y :
-            self.snake.change_x = 0
-            self.snake.change_y = 1
-            data['direction'] = 0
-
-        elif self.snake.center_x > self.food.center_x :
-            self.snake.change_x = -1
-            self.snake.change_y = 0
-            data['direction'] = 3
-
-        elif self.snake.center_x < self.food.center_x :
-            self.snake.change_x = 1
-            self.snake.change_y = 0
-            data['direction'] = 1
 
         # Data collection by calculating the distance from the apple to the head of the snake
         if self.snake.center_x == self.food.center_x and self.snake.center_y < self.food.center_y :
@@ -93,57 +74,7 @@ class Game(arcade.Window) :
         data['dx'] = dx
         data['dy'] = dy
 
-        if dx > 0 :
-            if dy > 0 :
-                self.snake.change_x = -1
-                self.snake.change_y = -1
-                data['direction'] = 3
-                if self.snake.change_x == 0 :
-                    data['direction'] =2
-            
-            elif dy < 0 :
-                self.snake.change_x = -1
-                self.snake.change_y = 1
-                data['direction'] = 3
-                if self.snake.change_x == 0 :
-                    data['direction'] = 0
-
-            else :
-                self.snake.change_x = -1 
-                self.snake.change_y = 0 
-                data['direction'] = 3
-        
-        if dx < 0 :
-            if dy > 0 :
-                self.snake.change_x=1
-                self.snake.change_y=-1
-                data['direction'] =1
-                if self.snake.change_x == 0 :
-                    data['direction']=2
-            elif dy < 0 :
-                self.snake.change_x = 1
-                self.snake.change_y = 1
-                data['direction'] = 1
-                if self.snake.change_x == 0 :
-                    data['direction'] = 0
-            else :
-                self.snake.change_x = 1
-                self.snake.change_y = 0
-                data['direction'] = 1
-
-            if dx == 0 :
-                if dy > 0 :
-                    self.snake.change_x = 0
-                    self.snake.change_y = -1
-                    data['direction'] = 2
-                elif dy < 0 :
-                    self.snake.change_x = 0
-                    self.snake.change_y = 1
-                    data['direction'] = 0 
-                else :
-                    self.snake.change_x = 0
-                    self.snake.change_y = 0
-
+     
 
     
 
